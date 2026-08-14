@@ -6,7 +6,7 @@ ShortHop is a self-hosted URL shortener built with Laravel. It provides a privat
 
 - PHP 8.4.1 or newer
 - Composer
-- Node.js 22.12 or newer, below Node.js 25, with npm
+- Node.js 22.13 or newer, below Node.js 25, with npm
 - SQLite with the PHP PDO SQLite extension for the default local setup, or another Laravel-supported database with its corresponding PHP PDO extension
 
 ## Installation
