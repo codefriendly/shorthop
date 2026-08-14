@@ -3,7 +3,6 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\Dashboard;
-use App\Filament\Pages\UiLab;
 use Filament\Actions\Action;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -32,7 +31,6 @@ class AppPanelProvider extends PanelProvider
             ->login()
             ->navigationGroups([
                 NavigationGroup::make('Administration'),
-                NavigationGroup::make('Local Testing'),
             ])
             ->userMenuItems([
                 Action::make('profile')
@@ -51,7 +49,6 @@ class AppPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->pages([
                 Dashboard::class,
-                UiLab::class,
             ])
             ->middleware([
                 EncryptCookies::class,

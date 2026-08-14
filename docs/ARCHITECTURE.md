@@ -20,7 +20,6 @@ Laravel Cloud is one compatible hosting option, but it is not an application req
 
 - `/` renders the public root view with modest public cache headers. The common public path is `/{urlKey}`.
 - `/app` is the Filament application panel and primary Links dashboard. It should list short links, newest first.
-- `/app/ui-lab` is a local-only scratchpad for UI experiments under the Filament `Local Testing` navigation group.
 - `/app/links/{shortURL}/qr/{format}` serves authenticated QR assets for link management. These routes must remain before the public short-link catch-all and require app access.
 - `/{urlKey}` is the public short-link redirect route and must remain thin and registered after app/auth/system routes.
 
