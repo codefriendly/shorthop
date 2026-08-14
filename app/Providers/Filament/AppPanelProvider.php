@@ -28,7 +28,7 @@ class AppPanelProvider extends PanelProvider
             ->path('app')
             ->viteTheme('resources/css/filament/app/theme.css')
             ->brandName(config('app.name'))
-            ->login()
+            ->login(fn () => redirect()->route('login'))
             ->navigationGroups([
                 NavigationGroup::make('Administration'),
             ])

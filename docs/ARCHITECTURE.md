@@ -20,6 +20,7 @@ Laravel Cloud is one compatible hosting option, but it is not an application req
 
 - `/` renders the public root view with modest public cache headers. The common public path is `/{urlKey}`.
 - `/app` is the Filament application panel and primary Links dashboard. It should list short links, newest first.
+- `/login` is the canonical Fortify authentication screen; Filament's `/app/login` route redirects there.
 - `/app/links/{shortURL}/qr/{format}` serves authenticated QR assets for link management. These routes must remain before the public short-link catch-all and require app access.
 - `/{urlKey}` is the public short-link redirect route and must remain thin and registered after app/auth/system routes.
 
@@ -58,7 +59,7 @@ Short-link redirects use the `short-links` throttle. The limit is intentionally 
 
 ## App UI
 
-Filament is the primary UI for managing links and viewing analytics.
+Filament is the primary UI for managing links and viewing analytics. Fortify owns the authentication flow so password, passkey, two-factor, and disabled-user checks share one login surface; Filament retains `/app/login` only as a redirect to `/login`.
 
 Use standard Filament resources/pages/actions for CRUD.
 

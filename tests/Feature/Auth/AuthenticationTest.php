@@ -6,7 +6,14 @@ use Laravel\Fortify\Features;
 test('login screen can be rendered', function () {
     $response = $this->get(route('login'));
 
-    $response->assertOk();
+    $response
+        ->assertOk()
+        ->assertSee('Sign in with a passkey');
+});
+
+test('filament login redirects to the canonical login', function () {
+    $this->get(route('filament.app.auth.login'))
+        ->assertRedirect(route('login'));
 });
 
 test('users can authenticate using the login screen', function () {
