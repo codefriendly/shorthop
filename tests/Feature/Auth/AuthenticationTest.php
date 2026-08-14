@@ -8,7 +8,8 @@ test('login screen can be rendered', function () {
 
     $response
         ->assertOk()
-        ->assertSee('Sign in with a passkey');
+        ->assertSee('Sign in with a passkey')
+        ->assertSee("window.location.assign(response.redirect || '/app')", escape: false);
 });
 
 test('filament login redirects to the canonical login', function () {
