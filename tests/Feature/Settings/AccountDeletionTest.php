@@ -1,0 +1,35 @@
+<?php
+
+use App\Models\User;
+use Livewire\Livewire;
+
+test('user can delete their account', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user);
+
+    $response = Livewire::test('pages::settings.delete-user-modal')
+        ->set('password', 'password')
+        ->call('deleteUser');
+
+    $response
+        ->assertHasNoErrors()
+        ->assertRedirect('/');
+
+    expect($user->fresh())->toBeNull();
+    expect(auth()->check())->toBeFalse();
+});
+
+test('correct password must be provided to delete account', function () {
+    $user = User::factory()->create();
+
+    $this->actingAs($user);
+
+    $response = Livewire::test('pages::settings.delete-user-modal')
+        ->set('password', 'wrong-password')
+        ->call('deleteUser');
+
+    $response->assertHasErrors(['password']);
+
+    expect($user->fresh())->not->toBeNull();
+});

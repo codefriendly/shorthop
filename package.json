@@ -1,0 +1,21 @@
+{
+    "$schema": "https://www.schemastore.org/package.json",
+    "name": "shorthop",
+    "private": true,
+    "type": "module",
+    "engines": {
+        "node": ">=22.12 <25"
+    },
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite"
+    },
+    "dependencies": {
+        "@laravel/passkeys": "^0.2.0",
+        "@tailwindcss/vite": "^4.1.11",
+        "concurrently": "^9.0.1",
+        "laravel-vite-plugin": "^3.1",
+        "tailwindcss": "^4.0.7",
+        "vite": "^8.0.0"
+    }
+}

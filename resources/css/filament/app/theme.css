@@ -1,0 +1,24 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+.qr-transparent-checker {
+    background-color: #fff;
+    background-image:
+        linear-gradient(45deg, rgb(229 231 235) 25%, transparent 25%),
+        linear-gradient(-45deg, rgb(229 231 235) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgb(229 231 235) 75%),
+        linear-gradient(-45deg, transparent 75%, rgb(229 231 235) 75%);
+    background-position: 0 0, 0 0.5rem, 0.5rem -0.5rem, -0.5rem 0;
+    background-size: 1rem 1rem;
+}
+
+.dark .qr-transparent-checker {
+    background-color: rgb(17 24 39);
+    background-image:
+        linear-gradient(45deg, rgb(55 65 81) 25%, transparent 25%),
+        linear-gradient(-45deg, rgb(55 65 81) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgb(55 65 81) 75%),
+        linear-gradient(-45deg, transparent 75%, rgb(55 65 81) 75%);
+}
