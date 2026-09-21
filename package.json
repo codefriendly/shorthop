@@ -7,8 +7,8 @@
         "node": ">=22.13 <25"
     },
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "build": "vp build",
+        "dev": "vp dev"
     },
     "dependencies": {
         "@laravel/passkeys": "^0.4.0",
@@ -16,9 +16,15 @@
         "concurrently": "^10.0.5",
         "laravel-vite-plugin": "^3.1",
         "tailwindcss": "^4.0.7",
-        "vite": "^8.2.2"
+        "vite": "^8.2.2",
+        "vite-plus": "0.3.0"
     },
     "optionalDependencies": {
         "@laravel/multiplex": "^0.4.3"
+    },
+    "devDependencies": {
+        "prettier": "^3.9.8",
+        "prettier-plugin-blade": "^3.3.3",
+        "prettier-plugin-tailwindcss": "^0.8.1"
     }
 }
